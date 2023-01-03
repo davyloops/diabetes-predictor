@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<h1>
+    {% if prediction == 0 %}
+        You are not at high risk for diabetes.
+    {% elif prediction == 1 %}
+        You are at high risk for diabetes.
+    {% endif %}
+</h1>
+<img id="picture" src="data:image/jpeg;base64,{{ education_graph }}">
+<img id="picture" src="data:image/jpeg;base64,{{ age_graph }}">
+<img id="picture" src="data:image/jpeg;base64,{{ genhlth_graph }}">
+<img id="picture" src="data:image/jpeg;base64,{{ bmi_graph }}">
+
+{% endblock %}
