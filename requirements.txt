@@ -1,0 +1,7 @@
+flask
+Jinja2
+matplotlib
+numpy
+pandas
+pickle
+plotnine
