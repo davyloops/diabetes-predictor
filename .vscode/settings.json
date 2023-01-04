@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/136b568f-00ef-4df9-a212-b354781e2142/AppServices/subscriptions/136b568f-00ef-4df9-a212-b354781e2142/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/diabetes-site",
+    "appService.deploySubpath": "."
+}
