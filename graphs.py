@@ -11,7 +11,7 @@ gray = '#5A5A5A'
 
 def prepare_data():
     data = pd.read_csv('prepared_data.csv')
-    data = data.sample(frac=0.10)
+    data = data.sample(frac=0.03)
     return data
 
 
