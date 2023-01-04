@@ -11,9 +11,14 @@
         You are at high risk for diabetes.
     {% endif %}
 </h1>
-<img id="picture" src="data:image/jpeg;base64,{{ education_graph }}">
+<!-- <img id="picture" src="data:image/jpeg;base64,{{ education_graph }}">
 <img id="picture" src="data:image/jpeg;base64,{{ age_graph }}">
 <img id="picture" src="data:image/jpeg;base64,{{ genhlth_graph }}">
-<img id="picture" src="data:image/jpeg;base64,{{ bmi_graph }}">
+<img id="picture" src="data:image/jpeg;base64,{{ bmi_graph }}"> -->
+
+<img src="{{url_for('static', filename='age_graph.png')}}" />
+<img src="{{url_for('static', filename='bmi_graph.png')}}" />
+<img src="{{url_for('static', filename='education_graph.png')}}" />
+<img src="{{url_for('static', filename='genhlth_graph.png')}}" />
 
 {% endblock %}
