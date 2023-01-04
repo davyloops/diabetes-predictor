@@ -11,6 +11,7 @@ gray = '#5A5A5A'
 
 def prepare_data():
     data = pd.read_csv('prepared_data.csv')
+    data = data.sample(frac=0.10)
     return data
 
 
@@ -33,11 +34,11 @@ def save_graph(graph):
 
 
 def generate_education_graph(data):
-    
+    data_modified = data[['Education','HasDiabetes']]
 
     ordered_categories = ['No School / Kindergarten', 'Elementary School / Middle School', 'High School (Not Finished)', 'High School / GED', 'College (Not Finished)', 'College Graduate']
     graph = (
-       ggplot(data, aes(x="Education", fill="HasDiabetes"))
+       ggplot(data_modified, aes(x="Education", fill="HasDiabetes"))
         + geom_bar(color=gray)
         + scale_fill_manual(values=[blue, orange])
         + scale_x_discrete(limits=ordered_categories)
@@ -48,13 +49,13 @@ def generate_education_graph(data):
 
 
 def generate_age_graph(data, answers):
-    # age_category = data["Age"].unique()[int(answers["Age"]) - 1]
-    age_category = np.sort(data["Age"].unique())[int(answers["Age"]) - 1]
+    data_modified = data[['Age','HasDiabetes']]
+    age_category = np.sort(data_modified["Age"].unique())[int(answers["Age"]) - 1]
 
     graph = (
-       ggplot(data, aes(x="Age", fill="HasDiabetes"))
+       ggplot(data_modified, aes(x="Age", fill="HasDiabetes"))
         + geom_bar(color=gray)
-        + annotate('text', x=age_category, y = 20000, label='You', angle=90)
+        + annotate('text', x=age_category, y = 1000, label='You', angle=90)
         + scale_fill_manual(values=[blue, orange])
         + theme(axis_text_x=element_text(rotation=90, hjust=0.3))
     )
@@ -63,6 +64,7 @@ def generate_age_graph(data, answers):
 
 def generate_bmi_graph(data):
     data_modified = data[data['BMI'] <= 55]
+    data_modified = data_modified[['BMI','HasDiabetes']]
 
     graph = (
     ggplot(data_modified, aes(x="BMI", fill='HasDiabetes'))
@@ -75,9 +77,11 @@ def generate_bmi_graph(data):
 
 
 def generate_genhlth_graph(data):
+    data_modified = data[['GenHlth','HasDiabetes']]
+
     ordered_categories = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent']
     graph = (
-       ggplot(data, aes(x="GenHlth", fill="HasDiabetes"))
+       ggplot(data_modified, aes(x="GenHlth", fill="HasDiabetes"))
         + geom_bar(color=gray)
         + scale_fill_manual(values=[blue, orange])
         + scale_x_discrete(limits=ordered_categories)
