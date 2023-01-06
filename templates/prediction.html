@@ -6,15 +6,15 @@
 {% block body %}
 <section>
     <div class="container py-6 my-6 has-text-centered">
-        <h1 class="is-size-2 has-text-centered">Your Results: </h1>
-        <h1 class="is-size-2 has-text-centered">
+        <h1 class="is-size-2 has-text-weight-semibold">Your Results: </h1>
+        <h1 class="is-size-2">
             {% if prediction == 0 %}
                 You are not at high risk for diabetes.
             {% elif prediction == 1 %}
                 You are at high risk for diabetes.
             {% endif %}
         </h1>
-        <p class="has-text-centered">
+        <p class="pt-2 is-size-5">
             Scroll down to find out more about diabetes risk factors.
         </p>
     </div>
@@ -29,19 +29,19 @@
 <img id="picture" src="data:image/jpeg;base64,{{ bmi_graph }}"> -->
 
 <div class="container py-6 has-text-centered">
-    <h1 class="title">Diabetes Risk Factors and Graphs</h1>
-    <h1 class="is-size-4">Age Risk Factors</h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam repudiandae 
-        eligendi architecto aperiam modi itaque veritatis nostrum natus harum quidem 
-        voluptatibus in, molestias nisi? Consequuntur nobis nemo velit veniam ullam 
-        quo optio rerum blanditiis officiis labore saepe fugit minus dolorem esse a 
-        ex, reiciendis quia et quasi adipisci voluptatum eveniet?
+    <h1 class="title">Diabetes Risk Factors and Statistics</h1>
+    <h1 class="is-size-4 has-text-weight-semibold">Age Risk Factors</h1>
+    <p class="pb-3 is-size-5">
+        As your age increases, the higher your risk for diabetes. After the age of 
+        45, your risk for diabetes increase dramatically. With the aging process, 
+        your body's insulin resistance increases leading to impaired pancreatic function.
+        People tend to exercise less as they age, which can lead to weight gain, one of the 
+        factors that have the most impact on diabetes risk.
     </p>
     <img src="{{url_for('static', filename='age_graph.png')}}" />
     
-    <h1 class="pt-6 is-size-4">BMI Risk Factors</h1>
-    <p>
+    <h1 class="pt-6 is-size-4 has-text-weight-semibold">BMI Risk Factors</h1>
+    <p class="pb-3 is-size-5">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam repudiandae 
         eligendi architecto aperiam modi itaque veritatis nostrum natus harum quidem 
         voluptatibus in, molestias nisi? Consequuntur nobis nemo velit veniam ullam 
@@ -49,6 +49,26 @@
         ex, reiciendis quia et quasi adipisci voluptatum eveniet?
     </p>
     <img src="{{url_for('static', filename='bmi_graph.png')}}" />
+
+    <h1 class="pt-6 is-size-4 has-text-weight-semibold">High Blood Pressure Risk Factors</h1>
+    <p class="pb-3 is-size-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam repudiandae 
+        eligendi architecto aperiam modi itaque veritatis nostrum natus harum quidem 
+        voluptatibus in, molestias nisi? Consequuntur nobis nemo velit veniam ullam 
+        quo optio rerum blanditiis officiis labore saepe fugit minus dolorem esse a 
+        ex, reiciendis quia et quasi adipisci voluptatum eveniet?
+    </p>
+    <img src="{{url_for('static', filename='highbp_graph.png')}}" />
+
+    <h1 class="pt-6 is-size-4 has-text-weight-semibold">Physical Activity Risk Factors</h1>
+    <p class="pb-3 is-size-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam repudiandae 
+        eligendi architecto aperiam modi itaque veritatis nostrum natus harum quidem 
+        voluptatibus in, molestias nisi? Consequuntur nobis nemo velit veniam ullam 
+        quo optio rerum blanditiis officiis labore saepe fugit minus dolorem esse a 
+        ex, reiciendis quia et quasi adipisci voluptatum eveniet?
+    </p>
+    <img src="{{url_for('static', filename='physactivity_graph.png')}}" />
 </div>
 
 
