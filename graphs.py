@@ -16,9 +16,9 @@ def generate_graphs():
     # generate_education_graph(data)
     # generate_age_graph(data)
     # generate_genhlth_graph(data)
-    # generate_bmi_graph(data)
+    generate_bmi_graph(data)
     # generate_highbp_graph(data)
-    generate_physactivity_graph(data)
+    # generate_physactivity_graph(data)
 
 
 def save_graph(graph, name):
@@ -95,7 +95,7 @@ def generate_bmi_graph(data):
     + ggtitle("Incidence of Diabetes by BMI")
     + xlab("BMI")
     + ylab("Number of People")
-    + theme(axis_text_x=element_text(rotation=0, hjust=0.3), legend_position = (.275, .77), legend_title=element_blank())
+    + theme(axis_text_x=element_text(rotation=0, hjust=0.3), legend_position = (.765, .77), legend_title=element_blank())
     )
     return save_graph(graph, "bmi_graph") 
 
@@ -116,4 +116,4 @@ def generate_genhlth_graph(data):
     )
     return save_graph(graph, "genhlth_graph") 
 
-# generate_graphs()
+generate_graphs()

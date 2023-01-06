@@ -2,7 +2,6 @@ from flask import Flask, request, render_template, redirect, url_for
 import matplotlib.pyplot as plt
 plt.switch_backend('agg')
 from model import predict
-from graphs import generate_graphs
 
 app = Flask(__name__)
 answers = []
@@ -15,9 +14,7 @@ def index():
 @app.route('/questionnaire', methods =["GET", "POST"])
 def questionnaire():
     if request.method == "POST":
-        height_feet = int(request.form.get("height-feet"))
-        height_inches = int(request.form.get("height-inches"))
-        height = height_feet * 12 + height_inches
+        height = int(request.form.get("height-feet")) * 12 + int(request.form.get("height-inches"))
         weight = int(request.form.get("weight"))
         bmi = str(int(weight * 703 / height**2))
 
