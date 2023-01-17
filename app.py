@@ -2,9 +2,10 @@ from flask import Flask, request, render_template, redirect, url_for
 import matplotlib.pyplot as plt
 plt.switch_backend('agg')
 from model import predict
+from datetime import datetime
 
 app = Flask(__name__)
-answers = []
+answers = None
 
 
 @app.route('/')
@@ -43,8 +44,21 @@ def questionnaire():
 
 @app.route('/prediction')
 def prediction():
-    prediction = predict(list(answers.values()))
-    return render_template('prediction.html', prediction=prediction)
+    if answers != None:
+        prediction = predict(list(answers.values()))
+        return render_template('prediction.html', prediction=prediction)
+
+    return render_template('prediction.html')
+
+
+@app.errorhandler(Exception)
+def error(e):
+    error_log = open("error_log.txt","a")
+    error_log.write(f"Error: {str(e)}, Time: {datetime.now()} \n")
+    error_log.close()
+
+    return render_template('index.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

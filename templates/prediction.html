@@ -4,6 +4,12 @@
 {% endblock %}
 
 {% block body %}
+
+
+{% if prediction is defined %}
+
+
+
 <section>
     <div class="container py-6 my-6 has-text-centered">
         <h1 class="is-size-2 has-text-weight-semibold">Your Results: </h1>
@@ -82,4 +88,23 @@
         <a href="https://dtc.ucsf.edu/">UCSF Diabetes Teaching Center</a><br>
     </div>
 </section>
+
+{% else %}
+
+<section class="section">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Diabetes Predictor
+      </h1>
+      <p class="is-size-5">
+        Please complete the questionnaire to receive your prediction.
+      </p><br>
+      <div class="is-mobile is-centered">
+            <button class="button is-link" onclick="window.location.href='questionnaire';">Begin Questionnaire</button>
+        </div>
+    </div>
+</section>
+
+
+{% endif %}
 {% endblock %}
