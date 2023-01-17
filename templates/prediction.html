@@ -15,30 +15,25 @@
             {% endif %}
         </h1>
         <p class="pt-2 is-size-5">
-            Scroll down to find out more about diabetes risk factors.
+            Scroll down to find out more about diabetes risk factors and other resources.
         </p>
     </div>
 </section>
 
-
-
-
-<!-- <img id="picture" src="data:image/jpeg;base64,{{ education_graph }}">
-<img id="picture" src="data:image/jpeg;base64,{{ age_graph }}">
-<img id="picture" src="data:image/jpeg;base64,{{ genhlth_graph }}">
-<img id="picture" src="data:image/jpeg;base64,{{ bmi_graph }}"> -->
-
-<div class="container py-6 has-text-centered">
-    <h1 class="title">Diabetes Risk Factors and Statistics</h1>
-    <h1 class="is-size-4 has-text-weight-semibold">Age Risk Factors</h1>
+<div class="container py-6 px-5">
+    <h1 class="pb-5 is-size-2 has-text-weight-semibold has-text-centered">Diabetes Risk Factors and Statistics</h1>
+    <h1 class="is-size-3 has-text-weight-semibold">Age Risk Factors</h1>
     <p class="pb-3 is-size-5">
-        As your age increases, the higher your risk for diabetes. After the age of 
-        45, your risk for diabetes increase dramatically. With the aging process, 
-        your body's insulin resistance increases which will cause the body's blood sugar to rise.
+        Your risk for diabetes increases the older you are. After the age of 
+        45, your risk for diabetes increases dramatically. As you get older, 
+        your body's insulin resistance increases, which will cause the body's blood sugar to rise.
         People tend to exercise less as they age, which can lead to weight gain, one of the 
         factors that have the most impact on diabetes risk.
     </p>
-    <img src="{{url_for('static', filename='age_graph.png')}}" />
+    <div class="has-text-centered">
+        <img src="{{url_for('static', filename='age_graph.png')}}" />
+    </div>
+    
     
     <h1 class="pt-6 is-size-4 has-text-weight-semibold">BMI Risk Factors</h1>
     <p class="pb-3 is-size-5">
@@ -48,7 +43,10 @@
         disease in patients. Excess weight usually leads to exercising less often due to increased levels 
         of fatigue and pressure on joints.
     </p>
-    <img src="{{url_for('static', filename='bmi_graph.png')}}" />
+    <div class="has-text-centered">
+        <img src="{{url_for('static', filename='bmi_graph.png')}}" />
+    </div>
+        
 
     <h1 class="pt-6 is-size-4 has-text-weight-semibold">High Blood Pressure Risk Factors</h1>
     <p class="pb-3 is-size-5">
@@ -58,7 +56,10 @@
         in the bloodstream. Higher levels of blood sugar can damage blood vessels and cause them to harden, 
         which increases blood pressure.
     </p>
-    <img src="{{url_for('static', filename='highbp_graph.png')}}" />
+    <div class="has-text-centered">
+        <img src="{{url_for('static', filename='highbp_graph.png')}}" />
+    </div>
+    
 
     <h1 class="pt-6 is-size-4 has-text-weight-semibold">Physical Activity Risk Factors</h1>
     <p class="pb-3 is-size-5">
@@ -67,7 +68,9 @@
         to increase insulin sensitivity which can help counteract the increase in insulin resistance 
         caused by diabetes.
     </p>
-    <img src="{{url_for('static', filename='physactivity_graph.png')}}" />
+    <div class="has-text-centered">
+        <img src="{{url_for('static', filename='physactivity_graph.png')}}" />
+    </div>
 </div>
 
 <section class="section">
@@ -79,11 +82,4 @@
         <a href="https://dtc.ucsf.edu/">UCSF Diabetes Teaching Center</a><br>
     </div>
 </section>
-
-
-<!-- <img src="{{url_for('static', filename='bmi_graph.png')}}" /><br>
-<img src="{{url_for('static', filename='education_graph.png')}}" />
-<img src="{{url_for('static', filename='genhlth_graph.png')}}" /> -->
-
-
 {% endblock %}
